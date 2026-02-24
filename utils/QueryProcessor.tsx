@@ -27,17 +27,44 @@ export default function QueryProcessor(query: string): string {
 
   if (query.toLowerCase().includes("plus")) {
     const numbers = (query.match(/\d+/g) || []).map(Number);
-    return (numbers[0] + numbers[1]).toString();
+    const len = numbers.length;
+    let i = 0;
+    let sum = 0;
+     while (i < len){
+      sum += numbers[i];
+      i++;
+    }
+    return (sum).toString();
   }
 
-  if (query.toLowerCase().includes("multiplied by")) {
+  if (query.toLowerCase().includes("multiplied")) {
     const numbers = (query.match(/\d+/g) || []).map(Number);
-    return (numbers[0] * numbers[1]).toString();
+    const len = numbers.length;
+    let i = 0;
+    let product = 0;
+     while (i < len){
+      if (i == 0) product = numbers[0];
+      else{
+        product *= numbers[i];
+      }
+      i++;
+    }
+    return (product).toString();
   }
 
   if (query.toLowerCase().includes("minus")) {
     const numbers = (query.match(/\d+/g) || []).map(Number);
-    return (numbers[0] - numbers[1]).toString();
+    const len = numbers.length;
+    let i = 0;
+    let diff = 0;
+     while (i < len){
+      if (i == 0) diff = numbers[0];
+      else{
+        diff -= numbers[i];
+      }
+      i++;
+    }
+    return (diff).toString();
   }
 
   return "";
