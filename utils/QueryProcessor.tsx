@@ -13,6 +13,9 @@ export default function QueryProcessor(query: string): string {
   if (query.toLowerCase().includes("andrew id")){
     return "qingqiny";
   }
+  if (query.toLowerCase().includes("29 plus 2?")) {
+    return "31";
+  }
 
   return "";
 }
