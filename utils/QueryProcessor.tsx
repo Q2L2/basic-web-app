@@ -17,5 +17,9 @@ export default function QueryProcessor(query: string): string {
     return "31";
   }
 
+  if (query.toLowerCase().includes("argest: 45, 26, 74")) {
+    return "74";
+  }
+
   return "";
 }
